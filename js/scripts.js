@@ -1,31 +1,33 @@
-function Image (imgUrl, tags, color) {
+function Image (imgUrl, tags) {
 
 	this.image = imgUrl;
 	this.tags = tags;
-	this.color=color;
 	this.display = function(){
 
 		var container = $("<div>")
 		this.tags.forEach(function(tag){
 			container.addClass(tag);
 		})
-		container.css("background", this.color)
 		container.addClass("image");
 
 		var imageString = "";
-		imageString += this.imgUrl;
+		imageString += this.image;
 
 		container.html(imageString)
 		$(".images").prepend(container);
 
+				console.log (imageString);
 	} 
 
 
 }
 
+
+
 var images = [
-	new Image ('<img src ="../../pics/Dorothy2.jpg"', ["house", "abandonded", "All"], "#0a3410"),
-	new Image ('<img src = "../../pics/Nordegg.jpg"', ["Shack", "Concrete","abandonded","All"], "#EA4335")
+	new Image ('<img src ="pics/Dorothy.jpg">', ["Birds", "Abandonded", "Old","All"]),
+	new Image ('<img src ="pics/Dorothy1.jpg">', ["House", "Old","Sky", "Clouds", "Abandonded","All"]),
+
 ]
 
 var tagList = []
